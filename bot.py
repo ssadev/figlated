@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import re
 import pyfiglet
-
+import json
 
 def figlateIt(msg):
     msgs = msg.split(" ")
@@ -32,5 +32,9 @@ client = MyClient()
 
 
 if __name__ == "__main__":
-    client.run("NzYxNjU5MzU1Mzc1NzMwNjg4.X3d0jQ._8BgDnhC4lJ_9r0inR30nhLKmik")
+    token = open('env.json', 'r').read()
+    token = json.loads(token)
+    token = str(token['bot_token'])
+    print(token)
+    client.run(token)
 
