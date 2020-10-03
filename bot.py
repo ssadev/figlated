@@ -27,7 +27,7 @@ class MyClient(discord.Client):
         msg = message.content
         if message.content.startswith('~f'):
             figlate = figlateIt(msg)
-            await message.channel.send(figlate)
+            await message.channel.send(f"```{figlate}````")
 
 client = MyClient()
 
